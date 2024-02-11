@@ -1,9 +1,12 @@
 <script>
   import '$lib/reset.css'
+  import Menu from '../components/menu.svelte';
 </script>
 
 <div id="page--wrapper">
-  <header>Header</header>
+  <header>
+    <Menu/>
+  </header>
   <main>
     <slot></slot>
   </main>
