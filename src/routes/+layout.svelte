@@ -17,4 +17,20 @@
     display: flex;
     flex-direction: column;
   }
+
+  header {
+    min-height: 50px;
+    padding: .5rem;
+  }
+
+  main {
+    height: 100%;
+  }
+
+
+  footer {
+    height: 50px;
+    margin-top: auto;
+    padding: .5rem;
+  }
 </style>
