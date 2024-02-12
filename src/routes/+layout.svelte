@@ -15,7 +15,9 @@
     <main>
       <slot></slot>
     </main>
-    <footer>Footer</footer>
+    <footer>
+      <span>Footer</span>
+    </footer>
   </div>
 {/if}
 
@@ -41,5 +43,6 @@
     height: 50px;
     margin-top: auto;
     padding: .5rem;
+    font-family: sans-serif;
   }
 </style>
