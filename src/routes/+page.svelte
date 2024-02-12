@@ -1,8 +1,9 @@
 <script>
-  import Profile from "../components/profile.svelte";
+  import { fly } from "svelte/transition"
+  import Profile from "../components/profile.svelte"
 </script>
 
-<div id="wrapper">
+<div id="wrapper" transition:fly={{ delay: 300, duration: 1000, x: -500 }}>
   <Profile/>
 </div>
 

@@ -1,17 +1,23 @@
 <script>
   import '$lib/reset.css'
-  import Menu from '../components/menu.svelte';
+  import Menu from '../components/menu.svelte'
+
+  let visable = false
+  setTimeout(() => visable = true, 0)
+
 </script>
 
-<div id="page--wrapper">
-  <header>
-    <Menu/>
-  </header>
-  <main>
-    <slot></slot>
-  </main>
-  <footer>Footer</footer>
-</div>
+{#if visable}
+  <div id="page--wrapper">
+    <header>
+      <Menu/>
+    </header>
+    <main>
+      <slot></slot>
+    </main>
+    <footer>Footer</footer>
+  </div>
+{/if}
 
 <style>
   #page--wrapper {

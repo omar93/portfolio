@@ -1,4 +1,6 @@
 <script>
+    import { fade } from "svelte/transition"
+    
   let skills = [
     {name:'Javascript', duration: 7},
     {name:'HTML', duration: 10},
@@ -7,7 +9,7 @@
   ]
 </script>
 
-<div id="wrapper">
+<div id="wrapper" transition:fade={{delay: 500, duration: 1500 }}>
 
   <div id="profile-wrapper">
     <img src="https://lh3.googleusercontent.com/a/ACg8ocKC229kcaTuZxHPhFtt40sbChvyZVOeUQqKdVjQ-Nmu8A=s360-c-no" alt="Profile picture">
