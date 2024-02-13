@@ -10,22 +10,26 @@
     {name:'React', duration: 3},
   ]
   
-  let gradient = 'gradient'
+  let clicked = false
+  const test = () => {
+  }
 
 
 </script>
 
 <div id="wrapper" transition:fade={{delay: 500, duration: 1500 }} >
 
-  <div id="profile-wrapper">
+  <div id="profile-wrapper" class={clicked ? "spon" : "spin"}>
     <img src="https://lh3.googleusercontent.com/a/ACg8ocKC229kcaTuZxHPhFtt40sbChvyZVOeUQqKdVjQ-Nmu8A=s360-c-no" alt="Profile" >
-    <div id="contact-wrapper">
-      <span>Omar</span>
-      <span>Alhamad</span>
-      <span>omar@codemaze.se</span>
-      <span>0765990141</span>
-      <span>Stockholm</span>
-    </div>
+
+  </div>
+
+  <div id="contact-wrapper" anchor="profile-wrapper">
+    <span>Omar</span>
+    <span>Alhamad</span>
+    <span>omar@codemaze.se</span>
+    <span>0765990141</span>
+    <span>Stockholm</span>
   </div>
 
   <div id="skills-wrapper">
@@ -58,41 +62,66 @@
 
 </div>
 
+<button on:click={() => test}>sping</button>
+
 <style>
+  * {
+    box-sizing: border-box;
+  }
   @property --rotate {
     syntax: "<angle>";
     initial-value: 132deg;
     inherits: false;
   }
 
-
   #wrapper {
     display: flex;
     flex-direction: column;
-    padding: rem;
   }
   
   #profile-wrapper {
-    background: rgb(255, 255, 255);
-    padding: 1rem;
     position: relative;
-    border-radius: 6px;
     display: flex;
     margin-left: 20px;
+    overflow: hidden;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    z-index: -2;
   }
 
   #profile-wrapper::before {
     content: "";
+    background-color: white;
+    width: 250%;
+    height: 250%;
     position: absolute;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    left: -5%;
-    border-radius: 6px;
+    left: -75%;
+    top: -75%;
+    animation: spin 4s linear infinite;
+    background: conic-gradient(
+      hsl(225 100% 50%),
+      hsl(61, 100%, 50%)
+    );
     z-index: -1;
-    background: linear-gradient(0.5turn, #3f87a6, #ebf8e1, #f69d3c);
-    animation: spin 1s linear infinite;
+  }
+
+  #profile-wrapper::after {
+    position: absolute;
+    content: "";
+    width: 98%;
+    height: 98%;
+    top: 1%;
+    left: 1%;
+    border-radius: 5px;
+    background-color: white;
     overflow: hidden;
+    z-index: -1;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg) }
   }
 
   
@@ -100,6 +129,9 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    top: 100px;
+    left: 300px;
+    position: absolute;
   }
 
   #skills-wrapper {
@@ -119,8 +151,8 @@
   }
 
   img {
-    width: 135px;
-    padding: 1rem;
+    width: 300px;
+    padding: 15px;
     border-radius: 25px;
   }
 
