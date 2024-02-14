@@ -1,13 +1,17 @@
 <script>
     import { fade } from "svelte/transition"
-    import { onMount } from "svelte";
     
   let skills = [
-    {name:'Javascript', duration: 7},
-    {name:'HTML', duration: 10},
-    {name:'CSS', duration: 10},
-    {name:'Svelte', duration: 4},
-    {name:'React', duration: 3},
+    'JavaScript / Typescript',
+    'NodeJS',
+    'React',
+    'Svelte / Kit',
+    'Express',
+    'Java',
+    'SQL / NoSQL',
+    'Git',
+    'Docker / Kubernetes'
+
   ]
   
   let clicked = false
@@ -20,75 +24,35 @@
 <div id="wrapper" transition:fade={{delay: 500, duration: 1500 }} >
 
   <div id="profile-wrapper" class={clicked ? "spon" : "spin"}>
+    <div id="top-left-to-bottom-right"></div>
+    <div id="top-right-to-bottom-left"></div>  
     <img src="https://lh3.googleusercontent.com/a/ACg8ocKC229kcaTuZxHPhFtt40sbChvyZVOeUQqKdVjQ-Nmu8A=s360-c-no" alt="Profile" >
-
   </div>
 
   <div id="contact-wrapper" anchor="profile-wrapper">
-    <span>Omar</span>
-    <span>Alhamad</span>
-    <span>omar@codemaze.se</span>
-    <span>0765990141</span>
-    <span>Stockholm</span>
-  </div>
-
-  <div id="skills-wrapper">
-
-    <ul>
-    {#each skills as skill, i}
-      {#if i === 0}
-        <span>Skills:</span>
-        <br><br>
-      {/if }
-      <div id="skill">
-        <span>{skill.name}</span>
-      </div>
-    {/each}
-    </ul>
-  
-    <ul>
-    {#each skills as skill, i}
-      {#if i === 0}
-        <span>Exp:</span>
-        <br><br>
-      {/if }
-      <div id="skill">
-        <span>{skill.duration} Years</span>
-      </div>
-    {/each}
-    </ul>
-    
+    <p>Fullstack utvecklare, som leverar kvalité,
+      HTML, CSS & Javascript expert</p>
   </div>
 
 </div>
 
-<button on:click={() => test}>sping</button>
 
 <style>
-  * {
-    box-sizing: border-box;
-  }
-  @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
+  #wrapper {
+    position: relative;
   }
 
-  #wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  
   #profile-wrapper {
     position: relative;
     display: flex;
     margin-left: 20px;
     overflow: hidden;
-    width: 500px;
-    height: 300px;
+    width: 1000px;
+    height: 500px;
     box-shadow: 0 20px 35px rgba(0,0,0,0.3);
     border-radius: 10px;
     z-index: -2;
+    
   }
 
   #profile-wrapper::before {
@@ -102,9 +66,12 @@
     animation: spin 4s linear infinite;
     background: conic-gradient(
       hsl(225 100% 50%),
+      hsl(61, 100%, 50%),
+      hsl(225 100% 50%),
       hsl(61, 100%, 50%)
     );
     z-index: -1;
+
   }
 
   #profile-wrapper::after {
@@ -127,42 +94,47 @@
   
   #contact-wrapper {
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    top: 100px;
-    left: 300px;
+    top: -200px;
+    left: 200px;
+    position: relative;
+    text-wrap: wrap;
+    word-break: break-word;
+  }
+
+  #top-left-to-bottom-right {
     position: absolute;
+    border: 5px solid black;
+    border-radius: 50px;
+    transform: rotate(25deg);
+    transform-origin: top left;
+    width: 53.5%;
+    top: 3px;
+    left: 10px;
   }
 
-  #skills-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
+  #top-right-to-bottom-left {
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 50px;
+    transform: rotate(-25deg);
+    transform-origin: top right;
+    width: 53.5%;
+    top: 3px;
+    right: 12px;
   }
 
-  ul {
-    padding: 1rem;
-  }
-
-  #skill {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
+  p {
+    width: 200px;
   }
 
   img {
-    width: 300px;
+    width: 200px;
+    height: 200px;
     padding: 15px;
     border-radius: 25px;
+    z-index: 3;
   }
 
-  span {
-    padding: 5px;
-  }
-
-  div > ul > span:first-child {
-    font-size: 2rem;
-  }
 
 
 </style>

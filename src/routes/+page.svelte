@@ -9,7 +9,8 @@
 
 <style>
   #wrapper {
-    width: 25%;
+    display: grid;
+    width: 85%;
     min-height: 100%;
   }
 </style>

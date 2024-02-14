@@ -4,7 +4,7 @@
     {name:'Home', url:'/'},
     {name:'Github', url:'http://www.Github.com/omar93'},
     {name:'Linkedin', url:'/'},
-    {name:'CV', url:'/'}
+    {name:'CV', url:'/cv'}
   ]
 </script>
 
