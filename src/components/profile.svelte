@@ -48,7 +48,7 @@ let skills = [
   width: 250px;
   height: 250px;
   box-shadow: 0 20px 35px rgba(0,0,0,0.3);
-  border-radius: 10px;
+  border-radius: 50%;
   z-index: -2;
 }
 
@@ -61,12 +61,7 @@ let skills = [
   left: -75%;
   top: -75%;
   animation: spin 3s linear infinite;
-  background: conic-gradient(
-    hsl(225 100% 50%),
-    hsl(61, 100%, 50%),
-    hsl(225 100% 50%),
-    hsl(61, 100%, 50%)
-  );
+  background: conic-gradient(from 226deg at 50% 50%, rgba(241, 255, 0, 1) 50%, rgba(0, 203, 230, 1) 50%);
   z-index: -1;
 }
 
@@ -77,7 +72,7 @@ let skills = [
   height: 98%;
   top: 1%;
   left: 1%;
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: white;
   overflow: hidden;
   z-index: -1;
@@ -105,8 +100,8 @@ ul {
 
 img {
   width: 250px;
-  padding: 15px;
-  border-radius: 25px;
+  padding: 10px;
+  border-radius: 50%;
 }
 
 span {
