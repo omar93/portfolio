@@ -1,17 +1,15 @@
 <script>
   import { fly, fade } from "svelte/transition"
-  let links = [
-    {name:'Home', url:'/'},
+  let links = [ 
     {name:'Github', url:'http://www.Github.com/omar93'},
-    {name:'Linkedin', url:'/'},
-    {name:'CV', url:'/cv'}
+    {name:'Linkedin', url:'https://www.linkedin.com/in/omar-alhamad-435a25a6/'}
   ]
 </script>
 
 <div id="wrapper" transition:fade={{ delay: 0, duration: 750, y: -50 }}>
   <ul transition:fly={{ delay: 0, duration: 750, y: -50 }}>
     {#each links as link}
-      <a href="{link.url}">{link.name}</a>
+      <a target="_blank" href="{link.url}">{link.name}</a>
     {/each}
   </ul>
 </div>
