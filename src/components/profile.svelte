@@ -60,8 +60,8 @@ let skills = [
   position: absolute;
   left: -75%;
   top: -75%;
-  animation: spin 3s linear infinite;
-  background: conic-gradient(from 226deg at 50% 50%, rgba(241, 255, 0, 1) 50%, rgba(0, 203, 230, 1) 50%);
+  animation: spin 3.14s linear infinite;
+  background: conic-gradient(from 90deg at 50% 50%, rgba(241, 255, 0, 1) 25%, rgba(0, 203, 230, 1) 50%);
   z-index: -1;
 }
 
