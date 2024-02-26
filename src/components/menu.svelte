@@ -16,6 +16,7 @@
 
 <style>
   #wrapper {
+    margin-top: -10px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -23,9 +24,14 @@
     height: 100%;
   }
   ul {
+    height: 100%;
+    box-shadow: -0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    align-items: center;
     display: flex;
-    width: 40%;
+    width: 100%;
     justify-content: space-evenly;
+    font-size: 1.5rem;
   }
 
   a {

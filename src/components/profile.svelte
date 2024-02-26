@@ -1,49 +1,17 @@
 <script>
-  import { fade } from "svelte/transition"
+  import { fly } from "svelte/transition"
   
-let skills = [
-  {name:'Javascript', duration: 7},
-  {name:'HTML', duration: 10},
-  {name:'CSS', duration: 10},
-  {name:'Svelte', duration: 4},
-  {name:'React', duration: 3},
-]
-
-
 </script>
 
-<div id="wrapper" transition:fade={{delay: 500, duration: 1500 }} >
-
-<div id="profile-wrapper" >
+<div id="profile-wrapper" transition:fly={{ delay: 300, duration: 1000, x: -500 }}>
   <img src="https://lh3.googleusercontent.com/a/ACg8ocKC229kcaTuZxHPhFtt40sbChvyZVOeUQqKdVjQ-Nmu8A=s360-c-no" alt="Profile" >
 </div>
-
-
-<div id="skills-wrapper">
-
-  <ul>
-  {#each skills as skill, i}
-    {#if i === 0}
-      <span>Skills:</span>
-      <br><br>
-    {/if }
-    <div id="skill">
-      <span>{skill.name}</span>
-    </div>
-  {/each}
-  </ul>
-
-</div>
-
-</div>
-
 
 <style>
   
 #profile-wrapper {
   position: relative;
   display: flex;
-  margin-left: 40px;
   overflow: hidden;
   width: 250px;
   height: 250px;
@@ -82,34 +50,13 @@ let skills = [
   to { transform: rotate(360deg) }
 }
 
-#skills-wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-}
 
-ul {
-  padding: 1rem;
-}
 
-#skill {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
-}
 
 img {
   width: 250px;
   padding: 10px;
   border-radius: 50%;
-}
-
-span {
-  padding: 5px;
-}
-
-div > ul > span:first-child {
-  font-size: 2rem;
 }
 
 

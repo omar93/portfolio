@@ -30,8 +30,7 @@
   }
 
   header {
-    min-height: 50px;
-    padding: .5rem;
+    min-height: 75px;
   }
 
   main {
