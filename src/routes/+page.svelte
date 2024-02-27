@@ -6,19 +6,29 @@
 </script>
 
 <div id="wrapper">
-  <div id="profile-wrapper" transition:fade={{delay: 500, duration: 1500 }}>
-    <Profile/>
+
+  <div id="profile-sectin">
+    <div id="profile-wrapper" transition:fade={{delay: 500, duration: 1500 }}>
+      <Profile/>
+    </div>
+  
+    <div id="skills-wrapper" transition:fade={{delay: 500, duration: 1500 }}>
+      <Skills/>
+    </div>
   </div>
-  <div id="skills-wrapper" transition:fade={{delay: 500, duration: 1500 }}>
+
+
+  <div id="board-wrapper">
     <BartBoard/>
-    <Skills/>
   </div>
+
 </div>
+
 
 <style>
   #wrapper {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     min-height: 100%;
   }
 
@@ -29,7 +39,10 @@
   }
 
   #skills-wrapper {
-    margin-left: 40px;
-    margin-left: 100px;
+    margin-left: 120px;
+  }
+
+  #board-wrapper {
+    margin: 50px  0 0 50px;
   }
 </style>

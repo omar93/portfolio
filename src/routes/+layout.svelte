@@ -1,4 +1,5 @@
 <script>
+    import { fly, fade } from "svelte/transition"
   import '$lib/reset.css'
   import Menu from '../components/menu.svelte'
 
@@ -15,8 +16,8 @@
     <main>
       <slot></slot>
     </main>
-    <footer>
-      <span>Footer</span>
+    <footer transition:fade={{ delay: 0, duration: 750, y: 50 }}>
+      <span transition:fly={{ delay: 0, duration: 750, y: 50 }}>Footer</span>
     </footer>
   </div>
 {/if}
@@ -43,5 +44,6 @@
     margin-top: auto;
     padding: .5rem;
     font-family: sans-serif;
+    box-shadow: -0px 0px 10px 5px rgba(0, 0, 0, 0.05);
   }
 </style>

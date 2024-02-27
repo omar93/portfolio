@@ -7,7 +7,7 @@
 </script>
 
 <div id="wrapper" transition:fade={{ delay: 0, duration: 750, y: -50 }}>
-  <ul transition:fly={{ delay: 0, duration: 750, y: -50 }}>
+  <ul transition:fly={{ delay: 150, duration: 1500, y: -50 }}>
     {#each links as link}
       <a target="_blank" href="{link.url}">{link.name}</a>
     {/each}
