@@ -20,9 +20,6 @@ apputveckling för optimerade matinköp`
   const startWriting = _ => {
     intervalID = setInterval(() => {
       showingText += text.charAt(letter++)
-      if(text.charAt(letter) === ' ') {
-        console.log("oh");
-      }
       if(letter >= text.length) {
         stopWriting()
         letter = 0

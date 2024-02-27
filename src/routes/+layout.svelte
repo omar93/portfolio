@@ -1,10 +1,26 @@
 <script>
-    import { fly, fade } from "svelte/transition"
+  import { fly } from "svelte/transition"
   import '$lib/reset.css'
   import Menu from '../components/menu.svelte'
+  import Footer from "../components/footer.svelte";
 
   let visable = false
   setTimeout(() => visable = true, 0)
+
+  let duration = 10000
+  
+  const getDuration = async () => {
+    
+    setTimeout(() => {
+      duration = 2000
+      
+    }, 2500);
+
+    // clearTimeout(timeout)
+    return duration
+  }
+
+  getDuration()
 
 </script>
 
@@ -16,8 +32,8 @@
     <main>
       <slot></slot>
     </main>
-    <footer transition:fade={{ delay: 0, duration: 750, y: 50 }}>
-      <span transition:fly={{ delay: 0, duration: 750, y: 50 }}>Footer</span>
+    <footer transition:fly={{ delay: 250, duration: getDuration(), y: -500 }}>
+      <Footer/>
     </footer>
   </div>
 {/if}

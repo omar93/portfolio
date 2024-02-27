@@ -9,7 +9,7 @@ let skills = [
   {name:'React', duration: 3},
 ]
 
-  skills.sort((a, b) => b.name.length - a.name.length);
+skills.sort((a, b) => b.name.length - a.name.length);
 
 let skillVisable = false
 let delay = 300
